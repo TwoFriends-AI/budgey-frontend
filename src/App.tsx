@@ -1,6 +1,28 @@
-import React from 'react'
+import { useState } from 'react'
+import { AuthPage } from './components/auth'
+import Dashboard from './pages/Dashboard'
+
+type AppState = 'landing' | 'auth' | 'dashboard';
 
 function App() {
+  const [currentPage, setCurrentPage] = useState<AppState>('landing');
+
+  const handleAuthSuccess = () => {
+    setCurrentPage('dashboard');
+  };
+
+  const handleSignOut = () => {
+    setCurrentPage('landing');
+  };
+
+  if (currentPage === 'auth') {
+    return <AuthPage onLoginSuccess={handleAuthSuccess} onRegisterSuccess={handleAuthSuccess} />;
+  }
+
+  if (currentPage === 'dashboard') {
+    return <Dashboard onSignOut={handleSignOut} />;
+  }
+
   return (
     <div className="min-h-screen bg-background-primary">
       {/* Header */}
@@ -18,10 +40,16 @@ function App() {
             </nav>
             
             <div className="flex items-center space-x-4">
-              <button className="text-primary-600 hover:text-primary-700 font-medium">
+              <button 
+                onClick={() => setCurrentPage('auth')}
+                className="text-primary-600 hover:text-primary-700 font-medium"
+              >
                 Sign In
               </button>
-              <button className="btn-primary">
+              <button 
+                onClick={() => setCurrentPage('auth')}
+                className="btn-primary"
+              >
                 Get Started
               </button>
             </div>
@@ -42,7 +70,10 @@ function App() {
               optimize budgets, and achieve your financial goals with AI-powered intelligence.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="btn-primary text-lg px-8 py-4">
+              <button 
+                onClick={() => setCurrentPage('auth')}
+                className="btn-primary text-lg px-8 py-4"
+              >
                 Start Free Trial
               </button>
               <button className="btn-secondary text-lg px-8 py-4">
@@ -144,7 +175,10 @@ function App() {
           <p className="text-xl text-primary-100 mb-8">
             Join thousands of users who have already improved their financial health with Budgey.ai
           </p>
-          <button className="bg-white text-primary-600 hover:bg-primary-50 font-semibold py-4 px-8 rounded-lg text-lg transition-colors duration-200">
+          <button 
+            onClick={() => setCurrentPage('auth')}
+            className="bg-white text-primary-600 hover:bg-primary-50 font-semibold py-4 px-8 rounded-lg text-lg transition-colors duration-200"
+          >
             Start Your Free Trial
           </button>
         </div>
