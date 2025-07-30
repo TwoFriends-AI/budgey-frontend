@@ -85,22 +85,22 @@ const AuthPage: React.FC<AuthPageProps> = ({
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary-50 to-secondary-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-br from-primary-50 to-secondary-50 dark:from-dark-secondary dark:to-dark-primary flex flex-col justify-center py-12 sm:px-6 lg:px-8 transition-colors duration-200">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-primary-600 mb-2">Budgey.ai</h1>
-          <p className="text-text-secondary">Smart personal finance insights</p>
+          <h1 className="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2 transition-colors duration-200">Budgey.ai</h1>
+          <p className="text-text-secondary dark:text-dark-text-secondary transition-colors duration-200">Smart personal finance insights</p>
         </div>
 
         {mode === 'login' ? (
           <div>
             <LoginForm onSubmit={handleLogin} isLoading={isLoading} />
             <div className="mt-6 text-center">
-              <p className="text-sm text-text-secondary">
+              <p className="text-sm text-text-secondary dark:text-dark-text-secondary transition-colors duration-200">
                 Don't have an account?{' '}
                 <button
                   onClick={() => setMode('register')}
-                  className="text-primary-600 hover:text-primary-500 font-medium focus:outline-none focus:underline"
+                  className="text-primary-600 dark:text-primary-400 hover:text-primary-500 dark:hover:text-primary-300 font-medium focus:outline-none focus:underline transition-colors duration-200"
                 >
                   Create one now
                 </button>
@@ -111,11 +111,11 @@ const AuthPage: React.FC<AuthPageProps> = ({
           <div>
             <RegisterForm onSubmit={handleRegister} isLoading={isLoading} />
             <div className="mt-6 text-center">
-              <p className="text-sm text-text-secondary">
+              <p className="text-sm text-text-secondary dark:text-dark-text-secondary transition-colors duration-200">
                 Already have an account?{' '}
                 <button
                   onClick={() => setMode('login')}
-                  className="text-primary-600 hover:text-primary-500 font-medium focus:outline-none focus:underline"
+                  className="text-primary-600 dark:text-primary-400 hover:text-primary-500 dark:hover:text-primary-300 font-medium focus:outline-none focus:underline transition-colors duration-200"
                 >
                   Sign in instead
                 </button>
@@ -128,7 +128,7 @@ const AuthPage: React.FC<AuthPageProps> = ({
       {/* Feature highlights */}
       <div className="mt-16 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-2xl font-bold text-text-primary mb-4">
+          <h2 className="text-2xl font-bold text-text-primary dark:text-dark-text-primary mb-4 transition-colors duration-200">
             Why choose Budgey.ai?
           </h2>
         </div>
@@ -137,8 +137,8 @@ const AuthPage: React.FC<AuthPageProps> = ({
             <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mx-auto mb-4">
               <div className="w-6 h-6 bg-primary-500 rounded"></div>
             </div>
-            <h3 className="text-lg font-semibold text-text-primary mb-2">Smart Insights</h3>
-            <p className="text-text-secondary text-sm">
+            <h3 className="text-lg font-semibold text-text-primary dark:text-dark-text-primary mb-2 transition-colors duration-200">Smart Insights</h3>
+            <p className="text-text-secondary dark:text-dark-text-secondary text-sm transition-colors duration-200">
               AI-powered analysis of your spending patterns and financial habits
             </p>
           </div>
@@ -146,8 +146,8 @@ const AuthPage: React.FC<AuthPageProps> = ({
             <div className="w-12 h-12 bg-savings/10 rounded-lg flex items-center justify-center mx-auto mb-4">
               <div className="w-6 h-6 bg-savings rounded"></div>
             </div>
-            <h3 className="text-lg font-semibold text-text-primary mb-2">Goal Tracking</h3>
-            <p className="text-text-secondary text-sm">
+            <h3 className="text-lg font-semibold text-text-primary dark:text-dark-text-primary mb-2 transition-colors duration-200">Goal Tracking</h3>
+            <p className="text-text-secondary dark:text-dark-text-secondary text-sm transition-colors duration-200">
               Set and monitor financial goals with personalized recommendations
             </p>
           </div>
@@ -155,8 +155,8 @@ const AuthPage: React.FC<AuthPageProps> = ({
             <div className="w-12 h-12 bg-secondary-100 rounded-lg flex items-center justify-center mx-auto mb-4">
               <div className="w-6 h-6 bg-secondary-500 rounded"></div>
             </div>
-            <h3 className="text-lg font-semibold text-text-primary mb-2">Secure & Private</h3>
-            <p className="text-text-secondary text-sm">
+            <h3 className="text-lg font-semibold text-text-primary dark:text-dark-text-primary mb-2 transition-colors duration-200">Secure & Private</h3>
+            <p className="text-text-secondary dark:text-dark-text-secondary text-sm transition-colors duration-200">
               Bank-level security with complete control over your financial data
             </p>
           </div>

@@ -4,6 +4,7 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
@@ -53,6 +54,18 @@ export default {
         },
         // Border colors
         border: '#e2e8f0',
+        // Dark mode specific colors
+        dark: {
+          primary: '#0f172a',    // Dark background
+          secondary: '#1e293b',  // Dark card background
+          tertiary: '#334155',   // Darker elements
+          border: '#475569',     // Dark borders
+          text: {
+            primary: '#f1f5f9',   // Primary text in dark mode
+            secondary: '#cbd5e1',  // Secondary text in dark mode
+            muted: '#94a3b8',     // Muted text in dark mode
+          },
+        },
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
